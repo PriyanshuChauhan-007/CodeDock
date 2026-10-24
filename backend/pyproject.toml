@@ -3,7 +3,11 @@ name = "codedock-backend"
 version = "0.1.0"
 description = "API and worker foundation for CodeDock"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "pydantic-settings>=2.6,<3.0",
+    "uvicorn[standard]>=0.34,<1.0",
+]
 
 [project.optional-dependencies]
 dev = [

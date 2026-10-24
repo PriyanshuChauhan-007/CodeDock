@@ -11,6 +11,7 @@ Completed:
 - product scope and non-goals;
 - system architecture;
 - repository foundation.
+- FastAPI application bootstrap with live and readiness health endpoints.
 
 Not implemented yet:
 
@@ -19,6 +20,8 @@ Not implemented yet:
 - worker execution;
 - sandbox containers;
 - frontend screens.
+
+The API bootstrap is available from `backend/app/main.py` as `app` and can later be served with Uvicorn.
 
 This is intentional. CodeDock is being built in small, tested stages rather than generated as one unverified application.
 
