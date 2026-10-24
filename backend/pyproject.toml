@@ -1,0 +1,15 @@
+[project]
+name = "codedock-backend"
+version = "0.1.0"
+description = "API and worker foundation for CodeDock"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
