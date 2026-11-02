@@ -10,6 +10,10 @@ class Settings(BaseSettings):
     app_name: str = Field(default="CodeDock API", validation_alias="APP_NAME")
     app_env: str = Field(default="development", validation_alias="APP_ENV")
     log_level: str = Field(default="INFO", validation_alias="LOG_LEVEL")
+    database_url: str = Field(
+        default="postgresql+asyncpg://codedock:change-me-for-local-development@localhost:5432/codedock",
+        validation_alias="DATABASE_URL",
+    )
 
     model_config = SettingsConfigDict(
         env_file=".env",

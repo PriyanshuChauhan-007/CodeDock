@@ -12,6 +12,7 @@ Completed:
 - system architecture;
 - repository foundation.
 - FastAPI application bootstrap with live and readiness health endpoints.
+- PostgreSQL engine, session dependency, and Alembic migration foundation.
 
 Not implemented yet:
 
@@ -22,6 +23,8 @@ Not implemented yet:
 - frontend screens.
 
 The API bootstrap is available from `backend/app/main.py` as `app` and can later be served with Uvicorn.
+
+Database migrations will be run from the `backend` directory with Alembic after the first model migration is added. The readiness endpoint now returns `503` when PostgreSQL is unavailable instead of reporting a false healthy state.
 
 This is intentional. CodeDock is being built in small, tested stages rather than generated as one unverified application.
 

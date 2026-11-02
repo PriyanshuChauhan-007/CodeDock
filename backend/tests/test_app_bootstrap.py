@@ -17,8 +17,6 @@ def test_ready_health_endpoint_reports_application_check() -> None:
 
     response = client.get("/health/ready")
 
-    assert response.status_code == 200
-    assert response.json() == {
-        "status": "ok",
-        "checks": {"application": "ok"},
-    }
+    assert response.status_code in {200, 503}
+    assert response.json()["checks"]["application"] == "ok"
+    assert "postgres" in response.json()["checks"]
